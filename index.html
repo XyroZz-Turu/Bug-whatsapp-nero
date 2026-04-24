@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nero Bug Sender</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+}
+
+.card{
+width:95%;
+max-width:420px;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(20px);
+border-radius:20px;
+padding:25px;
+box-shadow:0 0 30px rgba(0,0,0,0.4);
+}
+
+.title{
+font-size:20px;
+font-weight:700;
+margin-bottom:20px;
+text-align:center;
+letter-spacing:1px;
+}
+
+.label{
+font-size:13px;
+opacity:.7;
+margin-bottom:8px;
+}
+
+input{
+width:100%;
+padding:12px;
+border-radius:10px;
+border:none;
+background:rgba(255,255,255,0.08);
+color:white;
+outline:none;
+font-size:14px;
+margin-bottom:15px;
+}
+
+.buttons{
+display:flex;
+gap:10px;
+margin-bottom:15px;
+}
+
+.btn{
+flex:1;
+padding:10px;
+border-radius:10px;
+border:none;
+background:rgba(255,255,255,0.08);
+color:white;
+font-size:12px;
+cursor:pointer;
+transition:.2s;
+}
+
+.btn:hover{
+background:#ff2e88;
+}
+
+.kirim{
+width:100%;
+padding:12px;
+border:none;
+border-radius:12px;
+background:linear-gradient(90deg,#ff2e88,#ff6a00);
+color:white;
+font-weight:600;
+cursor:pointer;
+transition:.2s;
+}
+
+.kirim:active{
+transform:scale(.97);
+}
+
+.output{
+margin-top:15px;
+height:120px;
+border-radius:12px;
+background:rgba(255,255,255,0.05);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:14px;
+opacity:.7;
+}
+
+.footer{
+text-align:center;
+margin-top:15px;
+font-size:11px;
+opacity:.5;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="title">BUG WHATSAPP BY NERO</div>
+
+<div class="label">Masukkan Nomor</div>
+<input type="text" id="nomor" placeholder="08xxxxxxxxxx">
+
+<div class="buttons">
+<button class="btn">FORCE CLOSE</button>
+<button class="btn">DELAY INVIS</button>
+</div>
+
+<button class="kirim" onclick="kirim()">KIRIM</button>
+
+<div class="output" id="output">
+menunggu...
+</div>
+
+<div class="footer">COPY BY NERO</div>
+
+</div>
+
+<!-- AUDIO -->
+<audio id="sound" src="sound.mp3"></audio>
+
+<script>
+function kirim(){
+
+let nomor = document.getElementById("nomor").value
+let output = document.getElementById("output")
+let audio = document.getElementById("sound")
+
+audio.currentTime = 0
+audio.play()
+
+if(navigator.vibrate){
+navigator.vibrate(150)
+}
+
+output.innerHTML = "Mengirim ke : " + nomor
+
+}
+</script>
+
+</body>
+</html>
